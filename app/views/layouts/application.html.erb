@@ -12,6 +12,8 @@
       Welcome, <%= current_user.name %>
       <%= link_to "Log out", logout_path, method: 'delete' %>
     </div>
+  <% else %>
+    <%= link_to "Log in", new_session_path %>
   <% end %>
   <% if flash.any? %>
     <% flash.each do |key, value| %>
