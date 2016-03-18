@@ -6,8 +6,10 @@ class UsersController < ApplicationController
   def create
       @user = User.create user_params
       if @user.persisted?
+        flash[:success] = "Registered successfully."
         redirect_to root_path
       else
+        flash.now[:error] = "Error: #{@user.errors.full_messages.to_sentence}"
         render new
       end
   end
