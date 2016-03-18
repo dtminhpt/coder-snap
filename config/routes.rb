@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   
   resources :users
-  resources :sessions
+  resources :sessions, only: [:new, :create]
   
 
   get 'home/index'
