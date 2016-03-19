@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
 
     if @message.save
-      redirect_to sent_messages_path, notice: 'Message was successfully created.'
+      redirect_to messages_sent_path, notice: 'Message was successfully created.'
     else
       render :new
     end
@@ -25,8 +25,12 @@ class MessagesController < ApplicationController
   def show
   end
 
+  
+  # GET /messages/sent
   def sent
+    @messages = current_user.sent_messages.order(created_at: :desc)
   end
+
 
   private
 

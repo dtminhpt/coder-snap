@@ -1,2 +1,27 @@
-<h1>Messages#sent</h1>
-<p>Find me in app/views/messages/sent.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<h1>Your sent messages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recipient</th>
+      <th>Sent at</th>
+      <th>Read at</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @messages.each do |message| %>
+      <tr>
+        <td><%= message.recipient.name %></td>
+        <td><%= message.created_at %></td>
+        <td><%= message.read_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Message', new_message_path %>

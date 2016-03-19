@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160319075425) do
     t.integer  "recipient_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.datetime "read_at"
   end
 
   create_table "users", force: :cascade do |t|
