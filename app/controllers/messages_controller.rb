@@ -1,7 +1,9 @@
 class MessagesController < ApplicationController
   before_action :require_login
+
   
   def new
+    @message = current_user.sent_messages.new
   end
 
   def create
