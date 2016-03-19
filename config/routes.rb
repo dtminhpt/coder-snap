@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
+  get 'messages/new'
+
+  get 'messages/create'
+
+  get 'messages/index'
+
+  get 'messages/show'
+
+  get 'messages/sent'
+
   get 'sessions/new'
 
   get 'users/new'
 
-  
+  resources :messages
   resources :users
   resources :sessions, only: [:new, :create]
   
