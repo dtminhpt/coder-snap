@@ -5,9 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Message from    </th>
-      <th>Sent at     </th>
-      <th>Read at    </th>
+      <th>Message from</th>
+      <th>Sent at</th>
+      <th>Read at</th>
       <th></th>
     </tr>
   </thead>
@@ -15,7 +15,7 @@
   <tbody>
     <% @messages.each do |message| %>
       <tr <%= "class=unread" if message.read_at.nil? %>>
-        <td><%= message.user.name %></td>
+        <td><%= message.sender.name %></td>
         <td><%= message.created_at %></td>
         <td><%= message.read_at %></td>
         <td><%= link_to('Read', message) if message.read_at.nil? %></td>

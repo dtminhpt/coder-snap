@@ -1,2 +1,28 @@
-<h1>Messages#show</h1>
-<p>Find me in app/views/messages/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sender:</strong>
+  <%= @message.sender.name %>
+</p>
+
+<p>
+  <strong>Recipient:</strong>
+  <%= @message.recipient.name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @message.title %>
+</p>
+<p>
+  <strong>Body:</strong>
+  <%= @message.body %>
+</p>
+
+<p>
+  <strong>Read at:</strong>
+  <%= @message.read_at %>
+</p>
+
+<%= link_to 'Back', messages_path %>
+

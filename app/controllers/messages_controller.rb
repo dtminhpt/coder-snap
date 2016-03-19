@@ -22,8 +22,17 @@ class MessagesController < ApplicationController
     @messages = current_user.received_messages.order(created_at: :desc)
   end
 
+  
+  # GET /messages/1
   def show
+    @message = current_user.received_messages.find(params[:id])
+    if @message.read_at
+      redirect_to messages_path, notice: 'Message has been read before.'
+    else
+      @message.update_attribute(:read_at, Time.now)
+    end
   end
+
 
   
   # GET /messages/sent
@@ -36,6 +45,6 @@ class MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:sender_id, :recipient_id, :content, :read_at)
+      params.require(:message).permit(:sender_id, :recipient_id, :title, :body, :read_at)
     end
 end
