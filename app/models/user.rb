@@ -7,4 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :sent_messages, foreign_key: 'sender_id', class_name: 'Message'
   has_many :received_messages, class_name: 'Message', foreign_key: 'recipient_id'
+
+  has_many :friendships
+  has_many :friends, through: :friendships
 end
