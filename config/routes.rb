@@ -14,7 +14,12 @@ Rails.application.routes.draw do
   get 'users/new'
 
   resources :messages
-  resources :users
+
+  resources :users do
+    collection do
+      get :add_friend
+    end
+  end
   resources :sessions, only: [:new, :create]
   
 

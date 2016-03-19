@@ -5,6 +5,17 @@ class UsersController < ApplicationController
       @user = User.new
   end 
 
+  
+  def index
+    @users = User.all
+    @friends = current_user.friends
+  end
+
+  def add_friend
+    Friendship.create(user_id: current_user.id, friend_id: params[:friend_id])
+    redirect_to users_path
+  end
+
   def create
       @user = User.create user_params
       if @user.persisted?
