@@ -10,11 +10,21 @@
   <% if current_user %>
     <div class="alert alert-info">
       Welcome, <%= current_user.name %>
-      <%= link_to "Log out", logout_path, method: 'delete' %>
+      
+
+      <nav class="nav nav-inline">
+        <%= link_to "Log out", logout_path, method: 'delete', class: 'nav-link' %>
+        <a class="nav-link active" href="#">Sent messages</a>
+        <a class="nav-link" href="#">New message</a>
+        <a class="nav-link" href="#">Add friends</a>
+      </nav>
     </div>
+    
+    
   <% else %>
     <%= link_to "Log in", new_session_path %>
   <% end %>
+
   <% if flash.any? %>
     <% flash.each do |key, value| %>
       <div class="alert <%= flash_class_name(key) %> ">
