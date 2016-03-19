@@ -15,4 +15,10 @@ class ApplicationController < ActionController::Base
       redirect_to messages_path
     end
   end
+
+  def require_login
+    if current_user.nil?
+      redirect_to login_path
+    end
+  end
 end
