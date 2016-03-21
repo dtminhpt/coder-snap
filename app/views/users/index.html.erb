@@ -20,7 +20,7 @@
           <% if user == current_user %>
             Yourself
           <% elsif @friends.include?(user) %>
-            Your friend
+            Your friend (<%= link_to "Remove friendship", remove_friend_users_path(friend_id: user.id) %>)
           <% else %>
             <%= link_to "Add as a friend", add_friend_users_path(friend_id: user.id) %>
           <% end %>

@@ -16,6 +16,12 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+  def remove_friend
+      friend = User.find(params[:friend_id])
+      current_user.friends.delete(friend)
+      redirect_to users_path
+  end 
+
   def create
       @user = User.create user_params
       if @user.persisted?

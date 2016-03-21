@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get :add_friend
+      get :remove_friend
     end
   end
   resources :sessions, only: [:new, :create]
