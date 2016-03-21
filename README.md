@@ -4,9 +4,9 @@
 
 Submitted by: **Minh Dinh**
 
-Time spent: **14** hours
+Time spent: **16** hours
 
-URL: **Insert your Heroku URL here**
+URL: **https://coder-snap.herokuapp.com**
 
 ## User Stories
 
@@ -39,13 +39,13 @@ The following **optional** functionality is complete:
 The following **additional** features are implemented:
 
 - [x] Validate attributes of User model
-- [ ] Polish the UI
+- [x] Polish the UI
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](relative-path-to-your-gif-file-on-github-or-absolute-path-to-file-on-imgur-or-youtube)
+![Video Walkthrough](coder-snap.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
