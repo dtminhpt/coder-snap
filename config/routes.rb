@@ -20,7 +20,16 @@ Rails.application.routes.draw do
       get :add_friend
       get :remove_friend
     end
+
+    member do
+    get :block
+    get :unblock
+    end
+
   end
+
+
+
   resources :sessions, only: [:new, :create]
   
 

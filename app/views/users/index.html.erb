@@ -21,8 +21,11 @@
             Yourself
           <% elsif @friends.include?(user) %>
             Your friend (<%= link_to "Remove friendship", remove_friend_users_path(friend_id: user.id) %>)
+          <% elsif @blocked_users.include?(user) %>
+            <%= link_to "Unblock user", unblock_user_path(user) %>
           <% else %>
-            <%= link_to "Add as a friend", add_friend_users_path(friend_id: user.id) %>
+            <%= link_to "Add as a friend", add_friend_users_path(friend_id: user.id) %> |
+            <%= link_to "Block user", block_user_path(user) %>
           <% end %>
         </td>
       </tr>

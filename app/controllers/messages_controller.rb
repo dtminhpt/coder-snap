@@ -20,6 +20,10 @@ class MessagesController < ApplicationController
 
   def index
     @messages = current_user.received_messages.order(created_at: :desc)
+
+    if (ids = current_user.blocked_user_ids).any?
+        @messages = @messages.where("user_id NOT IN (?)", ids)
+    end
   end
 
   

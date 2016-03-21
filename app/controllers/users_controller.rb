@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @friends = current_user.friends
+    @blocked_users = current_user.blocked_users 
   end
 
   def add_friend
@@ -19,6 +20,17 @@ class UsersController < ApplicationController
   def remove_friend
       friend = User.find(params[:friend_id])
       current_user.friends.delete(friend)
+      redirect_to users_path
+  end 
+
+  def block
+      Block.create(user_id: current_user.id, blocked_id: params[:id])
+      redirect_to users_path
+  end 
+
+  def unblock
+      user = User.find(params[:id])
+      current_user.blocked_users.delete(user)
       redirect_to users_path
   end 
 
