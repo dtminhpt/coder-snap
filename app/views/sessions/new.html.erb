@@ -1,13 +1,21 @@
-<h1>Sessions#new</h1>
+<h3>Login page:</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="signup-form">
+        <%= form_tag sessions_path, method: 'post' do |f| %>
+          <div class="form-group">
+            <%= text_field_tag 'email', '', class: 'form-control', placeholder: 'Your E-mail' %>
+          </div>
+          <div class="form-group">
+            <%= password_field_tag 'password', '', class: 'form-control', placeholder: 'Password' %>
+          </div>
+          <div class="form-group">
+              <%= submit_tag 'Log In', class: 'btn btn-block btn-info' %>
+          </div>    
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= form_tag sessions_path, method: 'post' do %>
-  <div class="div">
-    <%= label_tag :email %>
-    <%= text_field_tag :email%>
-  </div>
-  <div class="div">
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
-  <%= submit_tag "Log in" %>
-<% end %>
