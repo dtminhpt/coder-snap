@@ -8,6 +8,7 @@
       <th>Name</th>
       <th>Email</th>
       <th>Friendship</th>
+      <th>Block</th>
     </tr>
   </thead>
 
@@ -24,7 +25,17 @@
           <% elsif @blocked_users.include?(user) %>
             <%= link_to "Unblock user", unblock_user_path(user) %>
           <% else %>
-            <%= link_to "Add as a friend", add_friend_users_path(friend_id: user.id) %> |
+            <%= link_to "Add as a friend", add_friend_users_path(friend_id: user.id) %> 
+          <% end %>
+        </td>
+        <td>
+          <% if user == current_user %>
+            Yourself
+          <% elsif @friends.include?(user) %>
+            Can't block 
+          <% elsif @blocked_users.include?(user) %>
+            <%= link_to "Unblock user", unblock_user_path(user) %>
+          <% else %>
             <%= link_to "Block user", block_user_path(user) %>
           <% end %>
         </td>
