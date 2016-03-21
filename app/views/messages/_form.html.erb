@@ -24,6 +24,10 @@
     <%= f.text_area :body, class: 'form-control' %>
   </fieldset>
   <fieldset class="form-group">
+    <%= f.label :photo %><br>
+    <%= f.file_field :photo, class: 'form-control' %>
+  </fieldset>
+  <fieldset class="form-group">
     <%= f.hidden_field :sender_id %>
     <%= f.submit 'Submit', class: 'btn btn-primary' %>
   </fieldset>

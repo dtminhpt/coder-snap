@@ -28,6 +28,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'simple_form'
 gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'carrierwave'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

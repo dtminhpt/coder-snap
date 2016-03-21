@@ -20,6 +20,11 @@
 </p>
 
 <p>
+  <strong>Photo:</strong>
+  <%= image_tag(@message.photo.url) if @message.photo.url.present? %>
+</p>
+
+<p>
   <strong>Read at:</strong>
   <%= @message.read_at %>
 </p>
